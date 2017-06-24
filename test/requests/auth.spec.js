@@ -32,7 +32,7 @@ describe('Authentication', function() {
   describe('Request Token', function() {
     it('returns a token with proper credentials', function() {
       const params = {
-        username: 'cubadomingo',
+        username: 'fake_user',
         password: 'password'
       };
 
@@ -82,7 +82,7 @@ describe('Authentication', function() {
     it('returns an error if token can not be authenticated', function() {
       const token = 'fakeToken';
       return chai.request(server)
-      .delete('/api/v1/events/1')
+      .delete('/api/v1/users/1')
       .set('x-access-token', token)
       .then((res) => {
         expect(res).to.have.status(404);
@@ -92,7 +92,7 @@ describe('Authentication', function() {
 
     it('returns an error if no token is provided', function() {
       return chai.request(server)
-      .delete('/api/v1/events/1')
+      .delete('/api/v1/users/1')
       .set('x-access-token', '')
       .then((res) => {
         expect(res).to.have.status(403);

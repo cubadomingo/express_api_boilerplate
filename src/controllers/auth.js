@@ -3,6 +3,8 @@ import { authenticate } from '../models/auth';
 
 const router = Router();
 
+// route for receiving a json web token
+
 router.post('/', (req, res, next) => {
   authenticate(req.body)
   .then((response) => {
