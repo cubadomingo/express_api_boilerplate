@@ -1,7 +1,7 @@
 module.exports = {
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/express_boilerplate',
+    connection: 'postgres://localhost/express_boilerplate_test',
     migrations: {
       directory: __dirname + '/src/db/migrations'
     },
@@ -11,7 +11,7 @@ module.exports = {
   },
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/express_boilerplate_test',
+    connection: 'postgres://localhost/express_boilerplate_development',
     migrations: {
       directory: __dirname + '/src/db/migrations'
     },
